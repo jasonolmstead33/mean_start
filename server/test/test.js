@@ -13,7 +13,7 @@ describe('Users', function()
 	
 	describe('Properties', function()
 	{
-		it('Should Return a List of Properties', function()
+		it('Should Return a Valid List of Properties', function()
 		{
 			return Users.properties().then(function(data)
 			{

@@ -15,27 +15,50 @@ exports.partials = function (req, res) {
 exports.hello = function(req, res)
 {
 	Users.hello()
-	.then(function(data)
-	{
-		return res.send(200, data);
-	})
-	.catch(function(err)
-	{
-		return res.send(400, err);
-	});
+		.then(function(data)
+		{
+			return res.send(200, data);
+		})
+		.catch(function(err)
+		{
+			return res.send(400, err);
+		})
+		.done();
 }
 
 exports.properties = function(req, res)
 {
 	Users.properties()
-	.then(function(data)
+		.then(function(data)
+		{
+			return res.send(200, data);
+		})
+		.catch(function(err)
+		{
+			return res.send(400, err);
+		})
+		.done();
+}
+
+exports.registerUser = function(req, res)
+{
+	var user_object = 
 	{
-		return res.send(200, data);
-	})
-	.catch(function(err)
-	{
-		return res.send(400, err);
-	});
+		id : req.body.username,
+		username : req.body.username,
+		password : req.body.password,
+		role : req.body.rold
+	};
+	Users.registerUser(user_object)
+		.then(function(data)
+		{
+			return res.send(200, data);
+		})
+		.catch(function(err)
+		{
+			return res.send(400, err);
+		})
+		.done();
 }
 
 

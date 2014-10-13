@@ -20,7 +20,26 @@ db.on('connected', function()
 });
 
 var TestDataSchema = mongoose.Schema({message:String});
+var UserSchema = mongoose.Schema({id : String, username: String, password: String, role : String});
+
 var TestData = mongoose.model('TestData', TestDataSchema);
+var User = mongoose.model('User', UserSchema);
+
+
+exports.registerUser = function(user_object)
+{
+	var deferred = q.defer();
+	var new_user = new User(user_object);
+	new_user.save(function(err, data)
+	{
+		if (!!err)
+		{
+			deferred.reject(err);
+		}
+		deferred.resolve(data);
+	})
+	return deferred.promise;
+}
 
 exports.hello = function()
 {

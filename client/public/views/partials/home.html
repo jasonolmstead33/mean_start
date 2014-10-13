@@ -1,3 +1,59 @@
-<p>
-This is your home page
-</p>
+<!--login modal-->
+<div ng-init="view = 'login'">
+	<div id="loginModal" aria-hidden="true" ng-show="view == 'login'">
+	  <div class="modal-dialog">
+	  <div class="modal-content">
+	      <div class="modal-header">
+	          <h1 class="text-center">Login</h1>
+	      </div>
+	      <div class="modal-body">
+	          <form class="form col-md-12 center-block">
+	            <div class="form-group">
+	              <input type="text" class="form-control input-lg" placeholder="Email">
+	            </div>
+	            <div class="form-group">
+	              <input type="password" class="form-control input-lg" placeholder="Password">
+	            </div>
+	            <div class="form-group">
+	              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
+	              <span class="pull-right"><a href ng-click="view = 'register'">Register</a></span><span><a href="https://github.com/jasonolmstead33/mean_start">Need help?</a></span>
+	            </div>
+	          </form>
+	      </div>
+	      <div class="modal-footer">
+	      </div>
+	  </div>
+	  </div>
+	</div>
+	<div id="registerModal" aria-hidden="true" ng-show="view == 'register'">
+	  <div class="modal-dialog">
+	  <div class="modal-content">
+	      <div class="modal-header">
+	          <h1 class="text-center">Register</h1>
+	      </div>
+	      <div class="modal-body">
+	          <form class="form col-md-12 center-block">
+	            <div class="form-group">
+	              <input type="text" class="form-control input-lg" placeholder="Email">
+	            </div>
+	            <div class="form-group">
+	              <input type="password" class="form-control input-lg" placeholder="Password">
+	            </div>
+	            <div class="form-group">
+	              <input type="password" class="form-control input-lg" placeholder="Password Confirmation">
+	            </div>
+	            <div class="form-group">
+	              <button class="btn btn-primary btn-lg btn-block">Register</button>
+	              <span class="pull-right"><a href ng-click="view = 'login'">Login</a></span><span><a href="https://github.com/jasonolmstead33/mean_start">Need help?</a></span>
+	            </div>
+	          </form>
+	      </div>
+	      <div class="modal-footer">
+	          <div class="col-md-12">
+	          <button class="btn" data-dismiss="modal" aria-hidden="true" ng-click="view = 'login'">Cancel</button>
+			  </div>	
+	      </div>
+	  </div>
+	  </div>
+	</div>
+</div>
