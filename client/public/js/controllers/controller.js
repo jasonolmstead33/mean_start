@@ -1,22 +1,47 @@
 app.controller('homeController', homeController);
 app.controller('statusController', statusController);
+app.controller('popupController', popupController);
 
-var homeController = function($scope, $http, $location)
+var homeController = function($scope, $http, $location, Global)
 {
+    $scope.global = Global;
 	$scope.view = "login";
 
 	$scope.register = function()
 	{
 		$location.path("/status")
 	}
+
+    $scope.login = function()
+    {
+        $location.path("/status")
+    }
 	
 
 
 }
 
-var statusController = function($scope, $http)
+var popupController = function($scope, $http, Global, ngDialog)
 {
+    
+}
+
+var statusController = function($scope, $http, Global, ngDialog)
+{
+    $scope.global = Global;
+
 	dashboard('#dashboard', oandpData);
+
+
+    $scope.brand = function()
+        {
+            ngDialog.open(
+            {
+                template : 'templateId',
+                controller: popupController
+            });
+        }
+
 }
 
 

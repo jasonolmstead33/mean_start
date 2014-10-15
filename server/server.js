@@ -48,6 +48,7 @@ app.use(express.static(path.join(__dirname, '/client/public')));
 app.use(app.router);
 
 app.get('/', routes.index);
+app.get('/logout', authentication.logout);
 app.get('/partials/:name', routes.partials);
 app.get('*', routes.index);
 

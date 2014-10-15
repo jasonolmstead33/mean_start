@@ -1,4 +1,4 @@
-var app = angular.module('meanStart', ["ngAnimate", "ngResource", "ngRoute"]).
+var app = angular.module('meanStart', ["ngAnimate", "ngResource", "ngRoute", "ngDialog"]).
     config(['$routeProvider', '$locationProvider',
         function constDemoRouteConfig($routeProvider, $locationProvider) {
             $locationProvider.html5Mode(true);
@@ -22,3 +22,19 @@ var app = angular.module('meanStart', ["ngAnimate", "ngResource", "ngRoute"]).
                     redirectTo: '/' });
         }
     ]);
+
+app.factory('Global', ['$http', '$location', function($http, $location) 
+{
+    return {
+        logout : function()
+        {
+            $http.get('/logout')
+            .success(function(data, status, headers, config) 
+            {
+                $location.path("/");
+            });
+        },
+        header : "./views/partials/header.html"
+        
+    };
+}]);
