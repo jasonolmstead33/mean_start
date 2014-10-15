@@ -1,2 +1,46 @@
-/** This is you blank starting style sheet **/
+body { padding-bottom: 70px; background-color: #eee}
+
+#dashboard path {  stroke: #fff; }
+#dashboard path:hover {  opacity:0.9; }
+#dashboard rect:hover {  fill:blue; }
+#dashboard .axis {  font: 10px sans-serif; }
+#dashboard .legend tr{    border-bottom:1px solid grey; }
+#dashboard .legend tr:first-child{    border-top:1px solid grey; }
+
+#dashboard .axis path,
+#dashboard .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#dashboard .x.axis path {  display: none; }
+#dashboard .legend{
+    margin-bottom:76px;
+    display:inline-block;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+#dashboard .legend td{
+    padding:4px 5px;
+    vertical-align:bottom;
+}
+#dashboard .legendFreq, .legendPerc{
+    align:right;
+    width:80px;
+
+}
+
+.welldash
+{
+	background-color: white;
+    -webkit-box-shadow: -4px 5px 5px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: -4px 5px 5px 0px rgba(0,0,0,0.5);
+    box-shadow: -4px 5px 5px 0px rgba(0,0,0,0.5);
+}
+
+.navbar
+{
+	border-radius: 0px;
+}
 
